@@ -61,10 +61,10 @@ int main()
 				if(mat[i][j]!=g[i][j])
 					fg=0;
 		if(!fg)
-			printf("No\n");
+			printf("NO\n");
 		else
 		{
-			printf("Yes\n");
+			printf("YES\n");
 			for(int i=1;i<=n;i++)
 			{
 				for(int j=1;j<=n;j++)
