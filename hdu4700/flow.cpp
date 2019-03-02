@@ -8,7 +8,7 @@ int n;
 int mat[109][109];
 int f[109][109],g[109][109];
 int dis[109],vis[109],pre[109];
-void prim()
+void prim() 
 {
 	memset(dis,0x80,sizeof(dis));
 	memset(vis,0,sizeof(vis));
