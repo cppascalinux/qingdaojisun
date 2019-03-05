@@ -31,7 +31,7 @@ void init()
 	for(int i=0;i<=p;i++)
 		cb[i][i]=cb[i][0]=1;
 	for(int i=2;i<=p;i++)
-		for(int j=1;j<i;j++)
+		for(int j=1;j<=p;j++)
 			cb[i][j]=(cb[i-1][j-1]+cb[i-1][j])%p;
 	// for(int i=0;i<=p;i++)
 	// 	for(int j=0;j<=p;j++)
@@ -122,7 +122,7 @@ void solve3()
 	// 	if((int)(ps[i].x+0.5)<0)
 	// 		printf("asfdqafqwf");
 	for(int i=0;i<fftl;i++)
-		ans=(ans+(ll)lucas(m,i)*((ll)(ps[i].x+0.5)))%p;
+		ans=(ans+(ll)lucas(m,i)*((int)(ps[i].x+0.5)))%p;
 	printf("%d",ans);
 }
 void solve4()
@@ -138,7 +138,7 @@ int main()
 {
 #ifndef ONLINE_JUDGE
 	freopen("b.in","r",stdin);
-	freopen("b.out","w",stdout);
+	freopen("b1.out","w",stdout);
 #endif
 	scanf("%d%lld%d",&n,&m,&p);
 	int fg1=1,fg2=1;
@@ -162,6 +162,5 @@ int main()
 		solve1();
 	else
 		solve4();
-	cerr<<clock();
 	return 0;
 }
