@@ -11,7 +11,7 @@ int v[8009];
 int hd[8009],eg[16009],nxt[16009];
 int sz[8009],son[8009];
 int rt[2][32809],mp[32809];
-int g[19][32809];
+int g[19][32809],tg[32809];
 int ans[32809];
 void ins(int a,int b)
 {
@@ -97,11 +97,11 @@ void dfs2(int x,int fa,int tag)
 			ans[i]+=g[tag][i];
 			ans[i]-=ans[i]>=mod?mod:0;
 		}
-		// memcpy(tg,g[tag],m<<2);
+		memcpy(tg,g[tag],m<<2);
 		// fft(tg,1);
-		// printf("x:%d ----------\n",x);
-		// for(int i=0;i<m;i++)
-		// 	printf("i:%d g:%d\n",i,tg[i]);
+		printf("x:%d ----------\n",x);
+		for(int i=0;i<m;i++)
+			printf("i:%d g:%d\n",i,tg[i]);
 		return;
 	}
 	for(int i=hd[x];i;i=nxt[i])
@@ -113,11 +113,11 @@ void dfs2(int x,int fa,int tag)
 		}
 	for(int i=0;i<m;i++)
 		g[tag][i]=(ll)g[tag][i]*rt[0][(ll)i*v[x]%m]%mod;
-	// memcpy(tg,g[tag],m<<2);
+	memcpy(tg,g[tag],m<<2);
 	// fft(tg,1);
-	// printf("x:%d ----------\n",x);
-	// for(int i=0;i<m;i++)
-	// 	printf("i:%d g:%d\n",i,tg[i]);
+	printf("x:%d ----------\n",x);
+	for(int i=0;i<m;i++)
+		printf("i:%d g:%d\n",i,tg[i]);
 	for(int i=0;i<m;i++)
 	{
 		ans[i]+=g[tag][i];
@@ -142,6 +142,9 @@ int main()
 	init();
 	dfs1(1,0);
 	dfs2(1,0,1);
+	for(int i=0;i<m;i++)
+		printf("%d ",ans[i]);
+	printf("\n");
 	fft(ans,1);
 	for(int i=0;i<m;i++)
 		printf("%d ",ans[i]);

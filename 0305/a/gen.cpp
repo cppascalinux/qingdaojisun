@@ -12,7 +12,7 @@ int n,m;
 int main()
 {
 	freopen("a.in","w",stdout);
-	n=100,m=128;
+	n=8000,m=57984;
 	printf("%d %d\n",n,m);
 	for(int i=1;i<=n;i++)
 		printf("%d ",rnd()%m);
