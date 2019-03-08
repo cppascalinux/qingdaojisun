@@ -19,7 +19,7 @@ void solve0()
 		for(int j=l;j<=min(s,r);j++)
 			if(j<=st)
 				buc[j]=1;
-			else
+			else /* if(s-j>=0&&s-j<=200000000) */
 				ans+=buc[s-j];
 	}
 	printf("%lld",ans%mod);
