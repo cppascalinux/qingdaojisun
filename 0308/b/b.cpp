@@ -54,25 +54,25 @@ int main()
 	for(int i=1;i<=n;i++)
 		for(int s=(1<<n)-1;s>=1;s--)
 			dp(i,s);
-	for(int s=1;s<1<<n;s++)
-	{
-		int sm=0;
-		for(int i=1;i<=n;i++)
-			if(s&(1<<(i-1)))
-				sm++;
-		for(int i=n;i>=1;i--)
-			if(s&(1<<(i-1)))
-				printf("1");
-			else
-				printf("0");
-		printf(" sm:%d \n",sm);
-		for(int i=1;i<=sm;i++)
-		{
-			printf("i:%d f:%d\n",i,f[i][s]);
-			// if((sm&1)&&!f[i][s])
-			// 	cerr<<"q";
-		}
-	}
+	// for(int s=1;s<1<<n;s++)
+	// {
+	// 	int sm=0;
+	// 	for(int i=1;i<=n;i++)
+	// 		if(s&(1<<(i-1)))
+	// 			sm++;
+	// 	for(int i=n;i>=1;i--)
+	// 		if(s&(1<<(i-1)))
+	// 			printf("1");
+	// 		else
+	// 			printf("0");
+	// 	printf(" sm:%d \n",sm);
+	// 	for(int i=1;i<=sm;i++)
+	// 	{
+	// 		printf("i:%d f:%d\n",i,f[i][s]);
+	// 		// if((sm&1)&&!f[i][s])
+	// 		// 	cerr<<"q";
+	// 	}
+	// }
 	ll ans=0;
 	for(int s=1;s<1<<n;s++)
 	{

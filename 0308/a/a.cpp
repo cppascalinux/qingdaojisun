@@ -71,5 +71,6 @@ int main()
 		return 0;
 	}
 	dp();
+	// exit(0);
 	return 0;
 }
