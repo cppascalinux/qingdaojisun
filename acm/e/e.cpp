@@ -1,5 +1,5 @@
 //2019.03.07
-//aizu 2790 non-redundant drive 点分治
+//aizu 2790 non-redundant drive 点分治+线段树
 #include<iostream>
 #include<cstdio>
 #include<cstring>
